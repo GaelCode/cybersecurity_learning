@@ -9,4 +9,4 @@ Here is a GitHub repository that contains real ransomware:
 
 ## Trying PhoneInfoga
 
-Utilisation of docker to search informations about phone number.
+Utilisation of docker and PhoneInfoga to search informations about phone number.
