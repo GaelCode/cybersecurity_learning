@@ -6,3 +6,7 @@ This is a personal training project. It's a very simple code, but I can add some
 
 Here is a GitHub repository that contains real ransomware:
 "malware_showcase by PatrikH0lop"
+
+## Trying PhoneInfoga
+
+Utilisation of docker to search informations about phone number.
