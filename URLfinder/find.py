@@ -28,8 +28,8 @@ def check_url(base_url, branch):
 def main():
     # Set up argparse for command-line arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument("base_url")
-    parser.add_argument("file_path")
+    parser.add_argument("base_url") # Adding the first argument with a name
+    parser.add_argument("file_path") # Adding the second argument with a name
     args = parser.parse_args()
 
     # Read the branches from the local file
