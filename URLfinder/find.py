@@ -22,14 +22,14 @@ def check_url(base_url, branch):
         else:
             print(f"[{response.status_code}] {url}")
     except requests.exceptions.RequestException as e:
-        print(f"[ERROR] {url}: {e}")
+        print(f"error in the request")
 
 # Main function
 def main():
     # Set up argparse for command-line arguments
-    parser = argparse.ArgumentParser(description="Check if URL branches exist on a website.")
-    parser.add_argument("base_url", help="The base URL of the website.")
-    parser.add_argument("file_path", help="The path to the local file containing the branches to test.")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("base_url")
+    parser.add_argument("file_path")
     args = parser.parse_args()
 
     # Read the branches from the local file
