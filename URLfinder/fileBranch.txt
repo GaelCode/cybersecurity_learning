@@ -1,0 +1,10 @@
+/admin
+/login
+/secret
+/dashboard
+/login.php
+/api/v1
+/config
+/uploads
+/stats
+/etablissements
